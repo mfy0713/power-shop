@@ -21,6 +21,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <!--cloud,alibaba,druid,mybatisplus,hutool,fastjs,qiuniu,swaggar-->
+    <!--配置了所有子项目需要的公共的版本-->
     <properties>
 
         <maven.compiler.source>13</maven.compiler.source>
