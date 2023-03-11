@@ -10,6 +10,10 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>power-common</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>common-base</module>
+    </modules>
 
     <properties>
         <maven.compiler.source>13</maven.compiler.source>
