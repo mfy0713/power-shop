@@ -12,6 +12,7 @@
         <module>cloud-iaas</module>
         <module>power-common</module>
         <module>power-bussiness</module>
+        <module>common-core</module>
     </modules>
 
     <parent>

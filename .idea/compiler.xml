@@ -2,14 +2,16 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="power-bussiness" />
+        <module name="manager-service" />
         <module name="gateway" />
         <module name="common-base" />
         <module name="auth-server" />
+        <module name="common-core" />
       </profile>
     </annotationProcessing>
   </component>
@@ -18,7 +20,9 @@
       <module name="auth-server" options="-parameters" />
       <module name="cloud-iaas" options="-parameters" />
       <module name="common-base" options="-parameters" />
+      <module name="common-core" options="-parameters" />
       <module name="gateway" options="-parameters" />
+      <module name="manager-service" options="-parameters" />
       <module name="power-bussiness" options="-parameters" />
       <module name="power-common" options="-parameters" />
       <module name="power-shop" options="-parameters" />
