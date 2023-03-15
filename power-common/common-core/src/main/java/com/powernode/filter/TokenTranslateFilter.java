@@ -8,6 +8,7 @@ import com.powernode.domain.LoginSysUser;
 import com.powernode.model.Result;
 import com.powernode.util.PathUtil;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -29,6 +30,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 
+@Configuration
 public class TokenTranslateFilter extends OncePerRequestFilter {
     @Autowired
     private StringRedisTemplate redisTemplate;
@@ -76,13 +78,15 @@ public class TokenTranslateFilter extends OncePerRequestFilter {
                         }
                         //讲用户身份对象保存到上下文
                         SecurityContextHolder.getContext().setAuthentication(realToken);
+                        //继续执行过滤器
+                        filterChain.doFilter(request, response);
                         return;
                     }
                 }
 
             }
             //只要有一个条件不满足，则抛出错误返回
-            Result<String> result=Result.fail(HttpStatus.UNAUTHORIZED.value(), "token不存在或者过期");
+            Result<String> result = Result.fail(HttpStatus.UNAUTHORIZED.value(), "token不存在或者过期");
             ObjectMapper objectMapper = new ObjectMapper();
             String resultStr = objectMapper.writeValueAsString(result);
             //设置响应类型

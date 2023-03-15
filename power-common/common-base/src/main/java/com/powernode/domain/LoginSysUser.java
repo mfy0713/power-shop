@@ -123,9 +123,10 @@ public class LoginSysUser implements Serializable, UserDetails {
                     //添加到目标集合
                     realPerms.add(str);
                 }
+            } else {
+                //不包含都好，则直接添加
+                realPerms.add(perm);
             }
-            //不包含都好，则直接添加
-            realPerms.add(perm);
         });
         this.perms = realPerms;
     }
