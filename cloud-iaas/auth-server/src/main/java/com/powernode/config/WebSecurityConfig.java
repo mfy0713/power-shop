@@ -48,7 +48,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .successHandler(authenticationSuccessHandler())
                 .failureHandler(authenticationFailureHandler());
         //设置注销之后的处理逻辑
-        http.logout().logoutSuccessHandler(logoutSuccessHandler());
+        http.logout().logoutUrl(AuthConstant.LOGOUT_URL)
+                .logoutSuccessHandler(logoutSuccessHandler());
         //限制所有的资源都必须要登录才能访问
         http.authorizeRequests().anyRequest().authenticated();
     }

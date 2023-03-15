@@ -36,16 +36,15 @@ public class SysMenuServiceImpl extends ServiceImpl<SysMenuMapper, SysMenu> impl
             //获取当前用户所有的菜单
             List<SysMenu> menuList = sysMenuMapper.selectMenusByUserId(sysUserId);
             //构建菜单的父子关系
-            List<SysMenu> treeMenu = buildTreeMenu(0L, menuList);
+            List<SysMenu> treeMenu = buildTreeMenuDg(0L, menuList);
             //写入redis--菜单转换为json写入redis
             redisTemplate.opsForValue().set(MenuConstant.SYS_MENU_PREFIX + sysUserId, JSON.toJSONString(treeMenu),
                     Duration.ofDays(Calendar.DAY_OF_WEEK));
             return treeMenu;
-        }
-        else {
+        } else {
             //如果redis已有菜单，则直接转换
 
-            return JSON.parseArray(menuStr,SysMenu.class);
+            return JSON.parseArray(menuStr, SysMenu.class);
 
         }
     }
@@ -66,6 +65,17 @@ public class SysMenuServiceImpl extends ServiceImpl<SysMenuMapper, SysMenu> impl
             });
             root.setList(children);
         });
+        return roots;
+    }
+
+    //使用递归构建菜单
+    public List<SysMenu> buildTreeMenuDg(Long parentId, List<SysMenu> sysMenus) {
+        //构建根节点
+        List<SysMenu> roots = sysMenus.stream()
+                .filter(sysMenu -> sysMenu.getParentId().equals(parentId))
+                .collect(Collectors.toList());
+        //循环当前节点，以当前节点作为父节点构建子节点集合
+        roots.forEach(root -> root.setList(buildTreeMenuDg(root.getMenuId(), sysMenus)));
         return roots;
     }
 }

@@ -5,7 +5,10 @@ import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -68,6 +71,9 @@ public class SysUser implements Serializable {
      */
     @TableField(value = "shop_id")
     private Long shopId;
+
+    @TableField(exist = false)
+    private List<Long> roleIdList=new ArrayList<>();
 
     private static final long serialVersionUID = 1L;
 }

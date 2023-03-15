@@ -8,6 +8,7 @@ import com.powernode.util.AuthUtil;
 import com.powernode.vo.MenuAndAuth;
 import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,6 +25,7 @@ public class SysMenuController {
     private SysMenuService sysMenuService;
 
     @GetMapping("/nav")
+    @PreAuthorize("hasAuthority('sys:menu:list')")
     public Result<MenuAndAuth> getMenusAndAuth() {
         //获取用户菜单
         List<SysMenu> menuList = sysMenuService.getMenusByUserId(AuthUtil.getSysUserId());
