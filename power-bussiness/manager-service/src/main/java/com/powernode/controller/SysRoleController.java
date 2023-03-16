@@ -1,5 +1,6 @@
 package com.powernode.controller;
 
+import com.powernode.ann.MyLog;
 import com.powernode.domain.SysRole;
 import com.powernode.model.Result;
 import com.powernode.service.SysRoleService;
@@ -21,6 +22,7 @@ public class SysRoleController {
     private SysRoleService sysRoleService;
 
     @GetMapping("/list")
+    @MyLog(operation = "查看角色列表")
     public Result<List<SysRole>> loadSysRoles(){
         return Result.success(sysRoleService.list());
     }

@@ -7,6 +7,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="product-service" />
         <module name="manager-service" />
         <module name="gateway" />
         <module name="common-base" />
@@ -26,6 +27,7 @@
       <module name="power-bussiness" options="-parameters" />
       <module name="power-common" options="-parameters" />
       <module name="power-shop" options="-parameters" />
+      <module name="product-service" options="-parameters" />
     </option>
   </component>
 </project>

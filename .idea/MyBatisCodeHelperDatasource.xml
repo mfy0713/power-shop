@@ -7,10 +7,10 @@
         <option name="generateService" value="true" />
         <option name="generateServiceInterface" value="true" />
         <option name="javaMapperPackage" value="com.powernode.mapper" />
-        <option name="javaMapperPath" value="$PROJECT_DIR$/power-bussiness/manager-service/src/main/java" />
+        <option name="javaMapperPath" value="$PROJECT_DIR$/power-bussiness/product-service/src/main/java" />
         <option name="javaModelPackage" value="com.powernode.domain" />
-        <option name="javaModelPath" value="$PROJECT_DIR$/power-bussiness/manager-service/src/main/java" />
-        <option name="lastDatabaseCrudChooseModuleName" value="manager-service" />
+        <option name="javaModelPath" value="$PROJECT_DIR$/power-bussiness/product-service/src/main/java" />
+        <option name="lastDatabaseCrudChooseModuleName" value="product-service" />
         <option name="lombokAllArgConstructor" value="true" />
         <option name="lombokDataAnnotation" value="true" />
         <option name="lombokNoArgsConstructor" value="true" />
@@ -61,6 +61,22 @@
                   <option name="javaServicePath" value="$PROJECT_DIR$/power-bussiness/manager-service/src/main/java" />
                   <option name="xmlPackage" value="mapper" />
                   <option name="xmlPath" value="$PROJECT_DIR$/power-bussiness/manager-service/src/main/resources" />
+                </UserPackageAndPathInfoByModule>
+              </value>
+            </entry>
+            <entry key="product-service">
+              <value>
+                <UserPackageAndPathInfoByModule>
+                  <option name="javaMapperPackage" value="com.powernode.mapper" />
+                  <option name="javaMapperPath" value="$PROJECT_DIR$/power-bussiness/product-service/src/main/java" />
+                  <option name="javaModelPacakge" value="com.powernode.domain" />
+                  <option name="javaModelPath" value="$PROJECT_DIR$/power-bussiness/product-service/src/main/java" />
+                  <option name="javaServiceInterfacePackage" value="com.powernode.service" />
+                  <option name="javaServiceInterfacePath" value="$PROJECT_DIR$/power-bussiness/product-service/src/main/java" />
+                  <option name="javaServicePackage" value="com.powernode.service.impl" />
+                  <option name="javaServicePath" value="$PROJECT_DIR$/power-bussiness/product-service/src/main/java" />
+                  <option name="xmlPackage" value="mapper" />
+                  <option name="xmlPath" value="$PROJECT_DIR$/power-bussiness/product-service/src/main/resources" />
                 </UserPackageAndPathInfoByModule>
               </value>
             </entry>
@@ -134,7 +150,7 @@
                 <TableGenerateConfig>
                   <option name="generatedKey" value="category_id" />
                   <option name="javaModelName" value="Category" />
-                  <option name="moduleName" value="common-core" />
+                  <option name="moduleName" value="product-service" />
                   <option name="useActualColumnName" value="false" />
                 </TableGenerateConfig>
               </value>
@@ -349,7 +365,7 @@
                 <TableGenerateConfig>
                   <option name="generatedKey" value="prod_id" />
                   <option name="javaModelName" value="Prod" />
-                  <option name="moduleName" value="common-core" />
+                  <option name="moduleName" value="product-service" />
                   <option name="useActualColumnName" value="false" />
                 </TableGenerateConfig>
               </value>
@@ -358,7 +374,7 @@
               <value>
                 <TableGenerateConfig>
                   <option name="javaModelName" value="ProdComm" />
-                  <option name="moduleName" value="common-core" />
+                  <option name="moduleName" value="product-service" />
                   <option name="useActualColumnName" value="false" />
                 </TableGenerateConfig>
               </value>
@@ -367,7 +383,7 @@
               <value>
                 <TableGenerateConfig>
                   <option name="javaModelName" value="ProdFavorite" />
-                  <option name="moduleName" value="common-core" />
+                  <option name="moduleName" value="product-service" />
                   <option name="useActualColumnName" value="false" />
                 </TableGenerateConfig>
               </value>
@@ -377,7 +393,7 @@
                 <TableGenerateConfig>
                   <option name="generatedKey" value="prop_id" />
                   <option name="javaModelName" value="ProdProp" />
-                  <option name="moduleName" value="common-core" />
+                  <option name="moduleName" value="product-service" />
                   <option name="useActualColumnName" value="false" />
                 </TableGenerateConfig>
               </value>
@@ -387,7 +403,7 @@
                 <TableGenerateConfig>
                   <option name="generatedKey" value="value_id" />
                   <option name="javaModelName" value="ProdPropValue" />
-                  <option name="moduleName" value="common-core" />
+                  <option name="moduleName" value="product-service" />
                   <option name="useActualColumnName" value="false" />
                 </TableGenerateConfig>
               </value>
@@ -397,7 +413,7 @@
                 <TableGenerateConfig>
                   <option name="generatedKey" value="id" />
                   <option name="javaModelName" value="ProdTag" />
-                  <option name="moduleName" value="common-core" />
+                  <option name="moduleName" value="product-service" />
                   <option name="useActualColumnName" value="false" />
                 </TableGenerateConfig>
               </value>
@@ -407,7 +423,7 @@
                 <TableGenerateConfig>
                   <option name="generatedKey" value="reference_id" />
                   <option name="javaModelName" value="ProdTagReference" />
-                  <option name="moduleName" value="common-core" />
+                  <option name="moduleName" value="product-service" />
                   <option name="useActualColumnName" value="false" />
                 </TableGenerateConfig>
               </value>
@@ -456,7 +472,7 @@
                 <TableGenerateConfig>
                   <option name="generatedKey" value="sku_id" />
                   <option name="javaModelName" value="Sku" />
-                  <option name="moduleName" value="common-core" />
+                  <option name="moduleName" value="product-service" />
                   <option name="useActualColumnName" value="false" />
                 </TableGenerateConfig>
               </value>
@@ -614,7 +630,7 @@
         </option>
         <option name="userMybatisPlus" value="true" />
         <option name="xmlMapperPackage" value="mapper" />
-        <option name="xmlMapperPath" value="$PROJECT_DIR$/power-bussiness/manager-service/src/main/resources" />
+        <option name="xmlMapperPath" value="$PROJECT_DIR$/power-bussiness/product-service/src/main/resources" />
       </ProjectProfile>
     </option>
   </component>

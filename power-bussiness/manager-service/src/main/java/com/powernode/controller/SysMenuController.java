@@ -1,5 +1,6 @@
 package com.powernode.controller;
 
+import com.powernode.ann.MyLog;
 import com.powernode.domain.LoginSysUser;
 import com.powernode.domain.SysMenu;
 import com.powernode.model.Result;
@@ -26,6 +27,7 @@ public class SysMenuController {
 
     @GetMapping("/nav")
     @PreAuthorize("hasAuthority('sys:menu:list')")
+    @MyLog(operation = "查看菜单列表")
     public Result<MenuAndAuth> getMenusAndAuth() {
         //获取用户菜单
         List<SysMenu> menuList = sysMenuService.getMenusByUserId(AuthUtil.getSysUserId());

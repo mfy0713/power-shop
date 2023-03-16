@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>manager-service</artifactId>
+    <artifactId>product-service</artifactId>
 
     <properties>
         <maven.compiler.source>13</maven.compiler.source>
@@ -36,9 +36,6 @@
             <artifactId>spring-boot-starter-aop</artifactId>
         </dependency>
 
-        <dependency>
-            <groupId>com.qiniu</groupId>
-            <artifactId>qiniu-java-sdk</artifactId>
-        </dependency>
+
     </dependencies>
 </project>
