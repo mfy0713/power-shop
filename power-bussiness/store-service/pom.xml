@@ -9,16 +9,17 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>product-service</artifactId>
+    <artifactId>store-service</artifactId>
 
     <properties>
         <maven.compiler.source>13</maven.compiler.source>
         <maven.compiler.target>13</maven.compiler.target>
     </properties>
+
     <dependencies>
         <dependency>
             <groupId>com.powernode</groupId>
-            <artifactId>es-common</artifactId>
+            <artifactId>common-core</artifactId>
             <version>1.0</version>
         </dependency>
         <dependency>
@@ -29,13 +30,6 @@
             <groupId>com.alibaba</groupId>
             <artifactId>druid-spring-boot-starter</artifactId>
         </dependency>
-
-        <!--日志切面依赖-->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-aop</artifactId>
-        </dependency>
-
-
     </dependencies>
+
 </project>

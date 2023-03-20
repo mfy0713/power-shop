@@ -7,11 +7,13 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="product-service" />
         <module name="manager-service" />
+        <module name="es-common" />
+        <module name="auth-server" />
+        <module name="store-service" />
+        <module name="product-service" />
         <module name="gateway" />
         <module name="common-base" />
-        <module name="auth-server" />
         <module name="common-core" />
       </profile>
     </annotationProcessing>
@@ -22,12 +24,14 @@
       <module name="cloud-iaas" options="-parameters" />
       <module name="common-base" options="-parameters" />
       <module name="common-core" options="-parameters" />
+      <module name="es-common" options="-parameters" />
       <module name="gateway" options="-parameters" />
       <module name="manager-service" options="-parameters" />
       <module name="power-bussiness" options="-parameters" />
       <module name="power-common" options="-parameters" />
       <module name="power-shop" options="-parameters" />
       <module name="product-service" options="-parameters" />
+      <module name="store-service" options="-parameters" />
     </option>
   </component>
 </project>
