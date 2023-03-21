@@ -106,7 +106,7 @@ public class ImportServiceImpl implements ImportService, CommandLineRunner {
             t1 = t2;
             return;
         }
-//获取每页大小
+        //获取每页大小
         Integer size = esConfig.getSize();
         //获取总页数
         Integer allCount = prodService.selectCount(t1, t2);

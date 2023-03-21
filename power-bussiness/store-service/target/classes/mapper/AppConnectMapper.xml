@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.powernode.mapper.AppConnectMapper">
+  <resultMap id="BaseResultMap" type="com.powernode.domain.AppConnect">
+    <!--@mbg.generated-->
+    <!--@Table app_connect-->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="user_id" jdbcType="VARCHAR" property="userId" />
+    <result column="app_id" jdbcType="TINYINT" property="appId" />
+    <result column="nick_name" jdbcType="VARCHAR" property="nickName" />
+    <result column="image_url" jdbcType="VARCHAR" property="imageUrl" />
+    <result column="biz_user_id" jdbcType="VARCHAR" property="bizUserId" />
+    <result column="biz_unionid" jdbcType="VARCHAR" property="bizUnionid" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, user_id, app_id, nick_name, image_url, biz_user_id, biz_unionid
+  </sql>
+</mapper>

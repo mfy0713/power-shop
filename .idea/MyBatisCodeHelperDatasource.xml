@@ -7,10 +7,10 @@
         <option name="generateService" value="true" />
         <option name="generateServiceInterface" value="true" />
         <option name="javaMapperPackage" value="com.powernode.mapper" />
-        <option name="javaMapperPath" value="$PROJECT_DIR$/power-bussiness/product-service/src/main/java" />
+        <option name="javaMapperPath" value="$PROJECT_DIR$/power-bussiness/store-service/src/main/java" />
         <option name="javaModelPackage" value="com.powernode.domain" />
-        <option name="javaModelPath" value="$PROJECT_DIR$/power-bussiness/product-service/src/main/java" />
-        <option name="lastDatabaseCrudChooseModuleName" value="product-service" />
+        <option name="javaModelPath" value="$PROJECT_DIR$/power-bussiness/store-service/src/main/java" />
+        <option name="lastDatabaseCrudChooseModuleName" value="store-service" />
         <option name="lombokAllArgConstructor" value="true" />
         <option name="lombokDataAnnotation" value="true" />
         <option name="lombokNoArgsConstructor" value="true" />
@@ -80,6 +80,22 @@
                 </UserPackageAndPathInfoByModule>
               </value>
             </entry>
+            <entry key="store-service">
+              <value>
+                <UserPackageAndPathInfoByModule>
+                  <option name="javaMapperPackage" value="com.powernode.mapper" />
+                  <option name="javaMapperPath" value="$PROJECT_DIR$/power-bussiness/store-service/src/main/java" />
+                  <option name="javaModelPacakge" value="com.powernode.domain" />
+                  <option name="javaModelPath" value="$PROJECT_DIR$/power-bussiness/store-service/src/main/java" />
+                  <option name="javaServiceInterfacePackage" value="com.powernode.service" />
+                  <option name="javaServiceInterfacePath" value="$PROJECT_DIR$/power-bussiness/store-service/src/main/java" />
+                  <option name="javaServicePackage" value="com.powernode.service.impl" />
+                  <option name="javaServicePath" value="$PROJECT_DIR$/power-bussiness/store-service/src/main/java" />
+                  <option name="xmlPackage" value="mapper" />
+                  <option name="xmlPath" value="$PROJECT_DIR$/power-bussiness/store-service/src/main/resources" />
+                </UserPackageAndPathInfoByModule>
+              </value>
+            </entry>
           </map>
         </option>
         <option name="mybatisPlusIdType" value="AUTO" />
@@ -91,7 +107,7 @@
                 <TableGenerateConfig>
                   <option name="generatedKey" value="id" />
                   <option name="javaModelName" value="AppConnect" />
-                  <option name="moduleName" value="common-core" />
+                  <option name="moduleName" value="store-service" />
                   <option name="useActualColumnName" value="false" />
                 </TableGenerateConfig>
               </value>
@@ -101,7 +117,7 @@
                 <TableGenerateConfig>
                   <option name="generatedKey" value="area_id" />
                   <option name="javaModelName" value="Area" />
-                  <option name="moduleName" value="common-core" />
+                  <option name="moduleName" value="store-service" />
                   <option name="useActualColumnName" value="false" />
                 </TableGenerateConfig>
               </value>
@@ -180,7 +196,7 @@
                 <TableGenerateConfig>
                   <option name="generatedKey" value="dvy_id" />
                   <option name="javaModelName" value="Delivery" />
-                  <option name="moduleName" value="common-core" />
+                  <option name="moduleName" value="store-service" />
                   <option name="useActualColumnName" value="false" />
                 </TableGenerateConfig>
               </value>
@@ -199,7 +215,7 @@
                 <TableGenerateConfig>
                   <option name="generatedKey" value="hot_search_id" />
                   <option name="javaModelName" value="HotSearch" />
-                  <option name="moduleName" value="common-core" />
+                  <option name="moduleName" value="store-service" />
                   <option name="useActualColumnName" value="false" />
                 </TableGenerateConfig>
               </value>
@@ -209,7 +225,7 @@
                 <TableGenerateConfig>
                   <option name="generatedKey" value="img_id" />
                   <option name="javaModelName" value="IndexImg" />
-                  <option name="moduleName" value="common-core" />
+                  <option name="moduleName" value="store-service" />
                   <option name="useActualColumnName" value="false" />
                 </TableGenerateConfig>
               </value>
@@ -267,7 +283,7 @@
                 <TableGenerateConfig>
                   <option name="generatedKey" value="id" />
                   <option name="javaModelName" value="Notice" />
-                  <option name="moduleName" value="common-core" />
+                  <option name="moduleName" value="store-service" />
                   <option name="useActualColumnName" value="false" />
                 </TableGenerateConfig>
               </value>
@@ -325,7 +341,7 @@
               <value>
                 <TableGenerateConfig>
                   <option name="javaModelName" value="PickAddr" />
-                  <option name="moduleName" value="common-core" />
+                  <option name="moduleName" value="store-service" />
                   <option name="useActualColumnName" value="false" />
                 </TableGenerateConfig>
               </value>
@@ -571,7 +587,7 @@
                 <TableGenerateConfig>
                   <option name="generatedKey" value="transcity_id" />
                   <option name="javaModelName" value="Transcity" />
-                  <option name="moduleName" value="common-core" />
+                  <option name="moduleName" value="store-service" />
                   <option name="useActualColumnName" value="false" />
                 </TableGenerateConfig>
               </value>
@@ -581,7 +597,7 @@
                 <TableGenerateConfig>
                   <option name="generatedKey" value="transcity_free_id" />
                   <option name="javaModelName" value="TranscityFree" />
-                  <option name="moduleName" value="common-core" />
+                  <option name="moduleName" value="store-service" />
                   <option name="useActualColumnName" value="false" />
                 </TableGenerateConfig>
               </value>
@@ -591,7 +607,7 @@
                 <TableGenerateConfig>
                   <option name="generatedKey" value="transfee_id" />
                   <option name="javaModelName" value="Transfee" />
-                  <option name="moduleName" value="common-core" />
+                  <option name="moduleName" value="store-service" />
                   <option name="useActualColumnName" value="false" />
                 </TableGenerateConfig>
               </value>
@@ -601,7 +617,7 @@
                 <TableGenerateConfig>
                   <option name="generatedKey" value="transfee_free_id" />
                   <option name="javaModelName" value="TransfeeFree" />
-                  <option name="moduleName" value="common-core" />
+                  <option name="moduleName" value="store-service" />
                   <option name="useActualColumnName" value="false" />
                 </TableGenerateConfig>
               </value>
@@ -611,7 +627,7 @@
                 <TableGenerateConfig>
                   <option name="generatedKey" value="transport_id" />
                   <option name="javaModelName" value="Transport" />
-                  <option name="moduleName" value="common-core" />
+                  <option name="moduleName" value="store-service" />
                   <option name="useActualColumnName" value="false" />
                 </TableGenerateConfig>
               </value>
@@ -630,7 +646,7 @@
         </option>
         <option name="userMybatisPlus" value="true" />
         <option name="xmlMapperPackage" value="mapper" />
-        <option name="xmlMapperPath" value="$PROJECT_DIR$/power-bussiness/product-service/src/main/resources" />
+        <option name="xmlMapperPath" value="$PROJECT_DIR$/power-bussiness/store-service/src/main/resources" />
       </ProjectProfile>
     </option>
   </component>

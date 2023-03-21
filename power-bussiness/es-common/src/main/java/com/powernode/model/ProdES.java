@@ -14,6 +14,7 @@ import org.springframework.data.elasticsearch.annotations.Setting;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.List;
 
 @Data
@@ -59,7 +60,7 @@ public class ProdES {
 
     @Field(type = FieldType.Date)
     @ApiModelProperty("上架时间")
-    private LocalDateTime putawayTime;
+    private Date putawayTime;
 
     @ApiModelProperty("标签列表id")
     private List<Long> tagList;
