@@ -9,9 +9,11 @@
         <outputRelativeToContentRoot value="true" />
         <module name="manager-service" />
         <module name="es-common" />
+        <module name="search-service" />
         <module name="auth-server" />
         <module name="store-service" />
         <module name="product-service" />
+        <module name="member-service" />
         <module name="gateway" />
         <module name="common-base" />
         <module name="common-core" />
@@ -27,10 +29,12 @@
       <module name="es-common" options="-parameters" />
       <module name="gateway" options="-parameters" />
       <module name="manager-service" options="-parameters" />
+      <module name="member-service" options="-parameters" />
       <module name="power-bussiness" options="-parameters" />
       <module name="power-common" options="-parameters" />
       <module name="power-shop" options="-parameters" />
       <module name="product-service" options="-parameters" />
+      <module name="search-service" options="-parameters" />
       <module name="store-service" options="-parameters" />
     </option>
   </component>

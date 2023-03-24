@@ -15,6 +15,7 @@ import com.powernode.model.ProdES;
 import com.powernode.service.ProdTagReferenceService;
 import com.powernode.service.SkuService;
 import com.powernode.util.AuthUtil;
+import com.powernode.vo.ProdInfoVo;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -247,7 +248,7 @@ public class ProdServiceImpl extends ServiceImpl<ProdMapper, Prod> implements Pr
     public List<ProdES> loadProdToProdES(Page<Prod> page, LocalDateTime d1, LocalDateTime d2) {
         Page<Prod> prodPage = prodMapper.selectPage(page, new LambdaQueryWrapper<Prod>()
                 .eq(Prod::getStatus, 1)
-                .between(d1 != null && d2 != null,Prod::getUpdateTime, d1, d2));
+                .between(d1 != null && d2 != null, Prod::getUpdateTime, d1, d2));
         //获取商品集合
         List<Prod> prodList = prodPage.getRecords();
         if (CollectionUtils.isEmpty(prodList)) {
@@ -313,5 +314,22 @@ public class ProdServiceImpl extends ServiceImpl<ProdMapper, Prod> implements Pr
         return prodMapper.selectCount(new LambdaQueryWrapper<Prod>()
                 .eq(Prod::getStatus, 1)
                 .between(d1 != null && d2 != null, Prod::getUpdateTime, d1, d2));
+    }
+
+    @Override
+    public ProdInfoVo getProdInfoById(Long prodId) {
+        ProdInfoVo prodInfoVo = new ProdInfoVo();
+        Prod prod = prodMapper.selectById(prodId);
+        if (ObjectUtils.isEmpty(prod)) {
+            throw new IllegalArgumentException("商品不存在");
+        }
+        //查询当前商品sku集合
+        List<Sku> skuList = skuService.list(new LambdaQueryWrapper<Sku>()
+                .eq(Sku::getProdId, prodId)
+                .eq(Sku::getStatus, 1));
+        //赋值给当前vo对象
+        BeanUtils.copyProperties(prod, prodInfoVo);
+        prodInfoVo.setSkuList(skuList);
+        return prodInfoVo;
     }
 }

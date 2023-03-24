@@ -31,4 +31,11 @@ public class ProdTagController {
     public Result<List<ProdTag>> listProdTagList() {
         return Result.success(prodTagService.list());
     }
+
+    @GetMapping("/prodTagList")
+    @ApiOperation("加载小程序的公告列表")
+    public Result<List<ProdTag>> loadMallProdTagList() {
+        return Result.success(prodTagService.loadMallProdTagList());
+    }
+
 }

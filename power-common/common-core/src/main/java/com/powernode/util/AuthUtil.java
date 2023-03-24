@@ -1,6 +1,7 @@
 package com.powernode.util;
 
 
+import com.powernode.domain.LoginMember;
 import com.powernode.domain.LoginSysUser;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -49,5 +50,19 @@ public class AuthUtil {
         //获取当前登录的用户
         LoginSysUser loginSysUser = (LoginSysUser) authentication.getPrincipal();
         return loginSysUser.getPerms();
+    }
+
+    //获取登录会员信息
+    public static LoginMember getLoginMember(){
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        LoginMember loginMember = (LoginMember) authentication.getPrincipal();
+        return loginMember;
+    }
+
+    //获取登录会员openid
+    public static String getMemberOpenId(){
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        LoginMember loginMember = (LoginMember) authentication.getPrincipal();
+        return loginMember.getOpenId();
     }
 }

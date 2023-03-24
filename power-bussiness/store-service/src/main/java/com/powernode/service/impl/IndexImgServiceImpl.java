@@ -39,7 +39,7 @@ public class IndexImgServiceImpl extends ServiceImpl<IndexImgMapper, IndexImg> i
     }
 
     @Override
-    @CacheEvict(key= IndexImgConstant.INDEX_IMG_KEY)
+    @CacheEvict(key = IndexImgConstant.INDEX_IMG_KEY)
     public Integer addIndexImg(IndexImg indexImg) {
         indexImg.setShopId(AuthUtil.getShopId());
         indexImg.setCreateTime(new Date());
@@ -48,7 +48,16 @@ public class IndexImgServiceImpl extends ServiceImpl<IndexImgMapper, IndexImg> i
     }
 
     @CacheEvict(key = IndexImgConstant.INDEX_IMG_KEY)
-    public Integer deleteByIds(List<Long> ids){
+    public Integer deleteByIds(List<Long> ids) {
         return indexImgMapper.deleteBatchIds(ids);
+    }
+
+    @Override
+    public List<IndexImg> loadMallIndexImgs() {
+        return indexImgMapper.selectList(new LambdaQueryWrapper<IndexImg>()
+                .select(IndexImg::getImgUrl, IndexImg::getProdId)
+                .eq(IndexImg::getStatus, 1)
+                .orderByDesc(IndexImg::getSeq)
+                .last("limit 5"));
     }
 }

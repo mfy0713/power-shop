@@ -8,6 +8,8 @@ import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @Api(tags = "公告管理API")
 @RequestMapping("/shop/notice")
@@ -21,7 +23,12 @@ public class NoticeController {
     }
 
     @PostMapping
-    public Result<Integer> addNotice(@RequestBody Notice notice){
+    public Result<Integer> addNotice(@RequestBody Notice notice) {
         return Result.success(noticeService.addNotice(notice));
+    }
+
+    @GetMapping("/topNoticeList")
+    public Result<List<Notice>> loadTopNoticeList() {
+        return Result.success(noticeService.loadTopNoticeList());
     }
 }

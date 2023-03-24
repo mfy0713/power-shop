@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSON;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.powernode.constant.AuthConstant;
 import com.powernode.constant.ResourceConstant;
+import com.powernode.domain.LoginMember;
 import com.powernode.domain.LoginSysUser;
 import com.powernode.model.Result;
 import com.powernode.util.PathUtil;
@@ -26,6 +27,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.time.Duration;
+import java.util.HashSet;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
@@ -74,14 +76,18 @@ public class TokenTranslateFilter extends OncePerRequestFilter {
                             realToken = new UsernamePasswordAuthenticationToken(loginSysUser, null, authorityList);
                         }
                         case AuthConstant.MEMBER: {
-
+                            LoginMember loginMember = JSON.parseObject(authenticationToken.getPrincipal().toString(), LoginMember.class);
+                            //会员没有权限，只要登录就可以
+                            realToken = new UsernamePasswordAuthenticationToken(loginMember, null, new HashSet<>());
+                            break;
                         }
-                        //讲用户身份对象保存到上下文
-                        SecurityContextHolder.getContext().setAuthentication(realToken);
-                        //继续执行过滤器
-                        filterChain.doFilter(request, response);
-                        return;
+
                     }
+                    //讲用户身份对象保存到上下文
+                    SecurityContextHolder.getContext().setAuthentication(realToken);
+                    //继续执行过滤器
+                    filterChain.doFilter(request, response);
+                    return;
                 }
 
             }

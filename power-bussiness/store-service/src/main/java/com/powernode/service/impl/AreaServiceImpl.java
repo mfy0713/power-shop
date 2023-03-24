@@ -2,6 +2,7 @@ package com.powernode.service.impl;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.powernode.constant.AreaConstant;
+import com.powernode.domain.MemberAddr;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheConfig;
 import org.springframework.cache.annotation.Cacheable;
@@ -26,5 +27,10 @@ public class AreaServiceImpl extends ServiceImpl<AreaMapper, Area> implements Ar
     @Cacheable(key = AreaConstant.AREA_ALL_KEY)
     public List<Area> loadAreaList() {
         return areaMapper.selectList(null);
+    }
+
+    @Override
+    public Integer addMemberAddr(MemberAddr memberAddr) {
+        return null;
     }
 }

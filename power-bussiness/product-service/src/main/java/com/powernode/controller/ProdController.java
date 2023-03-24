@@ -6,6 +6,7 @@ import com.powernode.domain.SysUser;
 import com.powernode.dto.ProdDto;
 import com.powernode.model.Result;
 import com.powernode.service.ProdService;
+import com.powernode.vo.ProdInfoVo;
 import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -44,5 +45,10 @@ public class ProdController {
     @DeleteMapping("/{prodId}")
     public Result<Integer> deleteProd(@PathVariable Long prodId){
         return Result.success(prodService.deleteByPid(prodId));
+    }
+
+    @GetMapping("/prod/prodInfo")
+    public Result<ProdInfoVo> getProdInfoVo(Long prodId){
+        return Result.success(prodService.getProdInfoById(prodId));
     }
 }

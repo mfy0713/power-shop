@@ -39,4 +39,15 @@
         </foreach>
         GROUP BY prod_id
     </select>
+
+    <select id="selectProdCommSummary" resultType="com.powernode.vo.ProdCommVo">
+        SELECT prod_id,
+               COUNT(evaluate)                                        number,
+               IFNULL(SUM(CASE evaluate WHEN 0 THEN 1 ELSE 0 END), 0) praiseNumber,
+               IFNULL(SUM(CASE evaluate WHEN 1 THEN 1 ELSE 0 END), 0) secondaryNumber,
+               IFNULL(SUM(CASE evaluate WHEN 2 THEN 1 ELSE 0 END), 0) negativeNumber,
+               IFNULL(SUM(pics), 0)                                   picNumber
+        FROM prod_comm
+        WHERE prod_id = #{prodId}
+    </select>
 </mapper>

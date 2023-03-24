@@ -5,6 +5,7 @@ import com.powernode.domain.Prod;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.powernode.dto.ProdDto;
 import com.powernode.model.ProdES;
+import com.powernode.vo.ProdInfoVo;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -55,4 +56,7 @@ public interface ProdService extends IService<Prod>{
      * @return
      */
     Integer selectCount(LocalDateTime d1,LocalDateTime d2);
+
+    //根据商品id查询商品详情
+    ProdInfoVo getProdInfoById(Long prodId);
 }

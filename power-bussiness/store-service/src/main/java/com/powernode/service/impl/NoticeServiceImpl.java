@@ -7,6 +7,7 @@ import com.powernode.util.AuthUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheConfig;
 import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -44,5 +45,15 @@ public class NoticeServiceImpl extends ServiceImpl<NoticeMapper, Notice> impleme
         notice.setCreateTime(new Date());
         notice.setUpdateTime(new Date());
         return noticeMapper.insert(notice);
+    }
+
+    @Override
+    @Cacheable(key = NoticeConstant.NOTICE_ALL_KEY)
+    public List<Notice> loadTopNoticeList() {
+        return noticeMapper.selectList(new LambdaQueryWrapper<Notice>()
+                .select(Notice::getTitle, Notice::getId)
+                .eq(Notice::getStatus, 1)
+                .eq(Notice::getIsTop, 1)
+                .orderByDesc(Notice::getCreateTime));
     }
 }

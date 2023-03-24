@@ -14,4 +14,6 @@ public interface IndexImgService extends IService<IndexImg>{
     Integer addIndexImg(IndexImg indexImg);
 
     Integer deleteByIds(List<Long> ids);
+
+    List<IndexImg> loadMallIndexImgs();
 }
